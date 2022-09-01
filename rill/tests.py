@@ -24,11 +24,18 @@ def materialize(provider: Provider) -> List[str]:
     return list(provider.get_source()())
 
 
-class TestGrep(unittest.TestCase):
-    """Tests grep."""
+class TestMethods(unittest.TestCase):
+    """Tests methods."""
 
-    def test_filtering_lines(self) -> None:
-        """Should work."""
+    def test_grep(self) -> None:
+        """Test filtering lines."""
         res = materialize(inp_from_str("hello\nworld").grep("orl"))
         self.assertEqual(1, len(res))
         self.assertEqual("world", res[0])
+
+    def test_line_lengths(self) -> None:
+        """Test char counts."""
+        res = materialize(inp_from_str("hi\nworld").line_lengths())
+        self.assertEqual(2, len(res))
+        self.assertEqual("2", res[0])
+        self.assertEqual("5", res[1])

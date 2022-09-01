@@ -47,7 +47,7 @@ class Provider:
         """Get the length of each line."""
 
         def length(line: str) -> str:
-            """Line-lenght helper."""
+            """Line-length helper."""
             return str(len(line))
 
         return self.map_lines(length)
