@@ -1,0 +1,9 @@
+/.idea
+/build
+/dist
+/helpers
+/rill.egg-info
+__pycache__
+.mypy_cache
+/github_issues
+/Dockerfile*
