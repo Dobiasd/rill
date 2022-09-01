@@ -1,4 +1,0 @@
-Hello, fellow dev,
-this test file helps to show
-the thrilling things
-you can do with rill. ;)
