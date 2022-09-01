@@ -2,10 +2,16 @@
 rill - tests
 """
 
+import codecs
 import unittest
 from typing import List, Iterable
 
 from .rill import Provider
+
+
+def caesar(text: str) -> str:
+    """Caesar Cypher."""
+    return str(codecs.encode(text, "rot_13"))
 
 
 def inp_from_str(content: str) -> Provider:
@@ -39,3 +45,10 @@ class TestMethods(unittest.TestCase):
         self.assertEqual(2, len(res))
         self.assertEqual("2", res[0])
         self.assertEqual("5", res[1])
+
+    def test_map_lines(self) -> None:
+        """Test transforming with a user function."""
+        res = materialize(inp_from_str("bonjour\nrill").map_lines(caesar))
+        self.assertEqual(2, len(res))
+        self.assertEqual("obawbhe", res[0])
+        self.assertEqual("evyy", res[1])

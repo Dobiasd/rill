@@ -83,19 +83,17 @@ you can do with RILL. ;)
 And extend your script infinitely, e.g.:
 
 ```bash
-cat example_input.txt | python3 -c 'import rill;
-def fib(n):
-    if n == 0: return 0
-    elif n == 1: return 1
-    else: return fib(n-1) + fib(n-2)
-
-rill.inp().grep("rill").line_lengths().map_lines(fib).show()'
+cat example_input.txt | python3 -c 'import rill
+import codecs
+def caesar(text):
+    return str(codecs.encode(text, "rot_13"))
+rill.inp().grep("rill").map_lines(caesar).show()'
 ```
 
 Output:
 ```
-6765
-46368
+gur guevyyvat guvatf
+lbh pna qb jvgu evyy. ;)
 ```
 
 At this point, it probably makes sense to move your code into a file and use it like a normal Python script.
