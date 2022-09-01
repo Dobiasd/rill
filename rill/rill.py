@@ -1,5 +1,5 @@
 """
-rill - tests
+rill
 """
 
 import fileinput
