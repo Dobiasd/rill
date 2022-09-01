@@ -1,4 +1,4 @@
-from .rill import Provider as Provider
+from .rill import Stream as Provider
 from .rill import inp as inp
 
 name = "rill"

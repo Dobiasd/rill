@@ -6,7 +6,7 @@ import codecs
 import unittest
 from typing import List, Iterable
 
-from .rill import Provider
+from .rill import Stream
 
 
 def caesar(text: str) -> str:
@@ -14,7 +14,7 @@ def caesar(text: str) -> str:
     return str(codecs.encode(text, "rot_13"))
 
 
-def inp_from_str(content: str) -> Provider:
+def inp_from_str(content: str) -> Stream:
     """Simulate input from string with newlines."""
 
     def get() -> Iterable[str]:
@@ -22,10 +22,10 @@ def inp_from_str(content: str) -> Provider:
         for line in content.splitlines():
             yield line
 
-    return Provider(get)
+    return Stream(get)
 
 
-def materialize(provider: Provider) -> List[str]:
+def materialize(provider: Stream) -> List[str]:
     """Collect all items from iterator and put into a list."""
     return list(provider.get_source()())
 
