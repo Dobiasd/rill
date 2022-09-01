@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="rill",
-    version="0.1.0",
+    version="0.1.1",
     author="Tobias Hermann",
     author_email="editgym@gmail.com",
     description="Simple text-stream processing functionality",
