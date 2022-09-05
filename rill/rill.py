@@ -89,10 +89,19 @@ class Stream:
 
         return Stream(get)
 
+    def sort(self) -> "Stream":
+        """Sort lines alphabetically."""
+
+        def get() -> Iterable[str]:
+            """Sorting"""
+            for line in sorted(self._source()):
+                yield line
+
+        return Stream(get)
+
     # to implement:
     # - regex grep
     # - regex replace
-    # - sort
     # - sort numerical
     # - reverselines
     # - reversechars

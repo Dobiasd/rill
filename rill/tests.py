@@ -70,3 +70,10 @@ class TestMethods(unittest.TestCase):
         res = materialize(inp_from_str("hello\ndear world").word_count())
         self.assertEqual(1, len(res))
         self.assertEqual("3", res[0])
+
+    def test_sort(self) -> None:
+        """Test sorting."""
+        res = materialize(inp_from_str("hello\ndear world").sort())
+        self.assertEqual(2, len(res))
+        self.assertEqual("dear world", res[0])
+        self.assertEqual("hello", res[1])
