@@ -120,7 +120,10 @@ pip install .
 API docs
 --------
 
-For the full api docs, please [check out `docs/rill.md`](docs/rill.md).
+When writing rill one-liners on the command line,
+you might not have IDE-like auto-completion,
+thus [full list of available functions](docs/rill.md)
+might be helpful.
 
 License
 -------
