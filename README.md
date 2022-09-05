@@ -17,6 +17,7 @@ Table of contents
   * [Introduction](#introduction)
   * [Examples](#examples)
   * [Requirements and Installation](#requirements-and-installation)
+  * [API docs](#api-docs)
 
 
 Introduction
@@ -116,6 +117,10 @@ cd rill
 pip install .
 ```
 
+API docs
+--------
+
+For the full api docs, please [check out `docs/rill.md`](docs/rill.md).
 
 License
 -------
