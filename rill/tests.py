@@ -31,7 +31,7 @@ def materialize(provider: Stream) -> List[str]:
 
 
 class TestMethods(unittest.TestCase):
-    """Tests methods."""
+    """Tests stream methods."""
 
     def test_grep(self) -> None:
         """Test filtering lines."""
@@ -52,3 +52,21 @@ class TestMethods(unittest.TestCase):
         self.assertEqual(2, len(res))
         self.assertEqual("obawbhe", res[0])
         self.assertEqual("evyy", res[1])
+
+    def test_line_count(self) -> None:
+        """Test line count."""
+        res = materialize(inp_from_str("hello\ndear world").line_count())
+        self.assertEqual(1, len(res))
+        self.assertEqual("2", res[0])
+
+    def test_char_count(self) -> None:
+        """Test char count."""
+        res = materialize(inp_from_str("hello\ndear world").char_count())
+        self.assertEqual(1, len(res))
+        self.assertEqual("15", res[0])
+
+    def test_world_count(self) -> None:
+        """Test word count."""
+        res = materialize(inp_from_str("hello\ndear world").word_count())
+        self.assertEqual(1, len(res))
+        self.assertEqual("3", res[0])

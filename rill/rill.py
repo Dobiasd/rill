@@ -71,12 +71,27 @@ class Stream:
 
         return Stream(get)
 
+    def char_count(self) -> "Stream":
+        """WC-m-like line counting."""
+
+        def get() -> Iterable[str]:
+            """Sum up chars of all lines."""
+            yield str(sum(map(len, self._source())))
+
+        return Stream(get)
+
+    def word_count(self) -> "Stream":
+        """WC-w-like line counting."""
+
+        def get() -> Iterable[str]:
+            """Split each line into words and sum up."""
+            yield str(sum(map(lambda line: len(line.split()), self._source())))
+
+        return Stream(get)
+
     # to implement:
     # - regex grep
     # - regex replace
-    # - word count
-    # - char count
-    # - sum
     # - sort
     # - sort numerical
     # - reverselines
