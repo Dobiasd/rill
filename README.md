@@ -9,6 +9,8 @@
 rill
 ====
 
+**DEPRECATED**
+
 **Python library providing simple text-stream processing functionality**
 
 
